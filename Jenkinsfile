@@ -3,11 +3,14 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
-                git branch 'S3-file-browser', url: 'https://github.com/DeepikaVKale/complete-cicd-project-microdegree.git'
+                git branch: 'S3-file-browser', url:'https://github.com/DeepikaVKale/complete-cicd-project-microdegree.git'
             }
         }
         stage('Docker-image-build'){
-            docker build -t deepikavkale/streamlit-classification-app:1 .
+            steps{
+                sh 'docker build -t deepikavkale/streamlit-classification-app:1 .'
+            }
+            
         }
         stage('Containerisation'){
             steps{
