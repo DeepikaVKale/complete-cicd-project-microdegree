@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: fullstack
-        image: manojkrishnappa/fullstack:20250428
+        image: deepikavkale/fullstack:20250428
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -42,7 +42,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: fullstack-service  # Updated name for clarity
+  name: fullstack-service # Updated name for clarity
 spec:
   selector:
     app: fullstack
