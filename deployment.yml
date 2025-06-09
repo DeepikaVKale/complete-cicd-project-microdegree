@@ -20,13 +20,13 @@ spec:
         - containerPort: 8081
         # Adding health checks (customize the path and port as needed)
         livenessProbe:
-          tcpSocket:
+          httpGet:
             path: /health
             port: 8081
           initialDelaySeconds: 30
           periodSeconds: 10
         readinessProbe:
-          tcpSocket:
+          httpGet:
             path: /health
             port: 8081
           initialDelaySeconds: 5
