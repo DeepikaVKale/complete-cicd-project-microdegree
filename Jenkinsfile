@@ -77,8 +77,8 @@ pipeline {
         stage('Deploy To Kubernetes') {
             steps {
                 withKubeConfig(caCertificate: '', clusterName: ' eks-cluster', contextName: '', credentialsId: 'kube', namespace: 'eks', restrictKubeConfigAccess: false, serverUrl: 'https://3A8A93DC24D70A770D5EE7438D05E8CF.gr7.us-east-1.eks.amazonaws.com') {
-                    sh "kubectl get pods -n microdegree"
-                    sh "kubectl apply -f deployment.yml -n microdegree"
+                    sh "kubectl get pods -n eks"
+                    sh "kubectl apply -f deployment.yml -n eks"
                 }
             }
         }
